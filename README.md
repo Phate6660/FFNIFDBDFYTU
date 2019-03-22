@@ -1,5 +1,7 @@
 # FFNIFDBDFYTU
-Firefox Nightly Installer For Debian Based Distributions, For You To Use
+Firefox Nightly Installer For Linux, For You To Use
 
 
-This simple little script downloads the most recent version of 64bit Firefox Nightly and stores it in your /opt folder. This is done for security, which I understand by my stating that means that I'm wrong. 
+Forked from impearker/FFNIFDBDFYTU.
+
+Adding on to their script. Just some little features like symlinking to a custom location, extracting a custom location, making a .desktop file, etc.
