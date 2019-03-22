@@ -1,4 +1,4 @@
-# FFNIFDBDFYTU
+# FFNIFLFYTU
 Firefox Nightly Installer For Linux, For You To Use
 
 
