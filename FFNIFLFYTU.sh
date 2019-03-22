@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# Pull most recent version of firefox from Mozilla
+# Pull most recent version of firefox from Mozilla.
 echo "downloading Firefox Nightly"
 wget -O ~/.FirefoxSetup.tar.bz2 "https://download.mozilla.org/?product=firefox-nightly-latest-ssl&os=linux64&lang=en-US"
-read -p "Nightly Downloaded"
+read -p "Nightly Downloaded."
 
-# Extract the tar to /opt
-echo "extracting tar"
+# Extract the tar to "/opt".
+echo "Extracting tar to \"/opt\"."
 sudo tar xjf ~/.FirefoxSetup.tar.bz2 -C /opt/
-read -p  "Nightly Exctracted"
+read -p  "Nightly Exctracted."
 
 # Ask for custom directory if wanted. If not wanted, link to "$HOME/bin".
 echo -e "Do you want to symlink to a custom directory, or just symlink to \"$HOME/bin\"?\nMake sure that whatever directory you choose is in your PATH.\n"
@@ -40,7 +40,7 @@ select option in "${options[@]}"; do
 done
 
 # Remove the downloaded tar.
-echo "Removing tar"
+echo "Removing tar."
 rm "$HOME"/.FirefoxSetup.tar.bz2
-read -p "tar removed"
+read -p "tar removed."
 exit 0
