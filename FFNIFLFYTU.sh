@@ -11,8 +11,7 @@ sudo tar xjf ~/.FirefoxSetup.tar.bz2 -C /opt/
 read -p  "Nightly Exctracted"
 
 # Ask for custom directory if wanted. If not wanted, link to "$HOME/bin".
-echo "Do you want to symlink to a custom directory, or just symlink to \"$HOME/bin\"?"
-echo -e "=========================================================================\n"
+echo -e "Do you want to symlink to a custom directory, or just symlink to \"$HOME/bin\"?\nMake sure that whatever directory you choose is in your PATH.\n"
 options=(
     "Custom Directory"
     "$HOME/bin"
@@ -27,12 +26,12 @@ select option in "${options[@]}"; do
         ;;
         ${options[1]})
             if test -d "$HOME"/bin; then
-	    	ln -s /opt/firefox-nightly/firefox "$HOME"/bin/firefox-nightly
-	    else 
-	    	sudo mkdir -pv ~/bin
-	    	ln -s /opt/firefox-nightly/firefox "$HOME"/bin/firefox-nightly
-	    fi
-	    break
+				ln -s /opt/firefox-nightly/firefox "$HOME"/bin/firefox-nightly
+			else 
+				sudo mkdir -pv ~/bin
+				ln -s /opt/firefox-nightly/firefox "$HOME"/bin/firefox-nightly
+			fi
+			break
         ;;
         *) 
             echo "Invalid option."
