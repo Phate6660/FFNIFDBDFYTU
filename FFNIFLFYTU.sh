@@ -3,12 +3,12 @@
 # Pull most recent version of firefox from Mozilla.
 echo "downloading Firefox Nightly"
 wget -O ~/.FirefoxSetup.tar.bz2 "https://download.mozilla.org/?product=firefox-nightly-latest-ssl&os=linux64&lang=en-US"
-read -p "Nightly Downloaded."
+read -p "Nightly Downloaded. Press [ENTER] to continue."
 
 # Extract the tar to "/opt".
 echo "Extracting tar to \"/opt\"."
 sudo tar xjf ~/.FirefoxSetup.tar.bz2 -C /opt/
-read -p  "Nightly Exctracted."
+read -p  "Nightly Exctracted. Press [ENTER] to continue."
 
 # Ask for custom directory if wanted. If not wanted, link to "$HOME/bin".
 echo -e "Do you want to symlink to a custom directory, or just symlink to \"$HOME/bin\"?\nMake sure that whatever directory you choose is in your PATH.\n"
@@ -21,15 +21,15 @@ select option in "${options[@]}"; do
         ${options[0]})
             echo "Please input the full path of where you'd like to symlink. (Don't include the final slash)."
             read -r directory
-            sudo ln -s /opt/firefox-nightly/firefox "$directory"/firefox
+            sudo ln -s /opt/firefox/firefox "$directory"/firefox-nightly
             break
         ;;
         ${options[1]})
             if test -d "$HOME"/bin; then
-				ln -s /opt/firefox-nightly/firefox "$HOME"/bin/firefox-nightly
+				ln -s /opt/firefox/firefox "$HOME"/bin/firefox-nightly
 			else 
 				sudo mkdir -pv ~/bin
-				ln -s /opt/firefox-nightly/firefox "$HOME"/bin/firefox-nightly
+				ln -s /opt/firefox/firefox "$HOME"/bin/firefox-nightly
 			fi
 			break
         ;;
@@ -42,5 +42,5 @@ done
 # Remove the downloaded tar.
 echo "Removing tar."
 rm "$HOME"/.FirefoxSetup.tar.bz2
-read -p "tar removed."
+read -p "tar removed. Press [ENTER] to continue."
 exit 0
