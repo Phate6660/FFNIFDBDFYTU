@@ -33,9 +33,7 @@ select option in "${options[@]}"; do
 			fi
 			break
         ;;
-        *) 
-            echo "Invalid option."
-        ;;
+        *) echo "Invalid option.";;
     esac
 done
 
